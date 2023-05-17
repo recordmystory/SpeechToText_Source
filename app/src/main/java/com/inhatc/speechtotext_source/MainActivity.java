@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btnImageRecording:
                     if(!bRecording){
                         txtSTT.setText("[ Speech To Text ]"+"\n");
-                        Start_Record();
+                        Start_Record(); // 레코딩 시작
                         Toast.makeText(getApplicationContext(), "Start recording your voice...", Toast.LENGTH_SHORT).show();
                     }else{
-                        Stop_Record();
+                        Stop_Record(); // 레코딩 중지
                     }
                     break;
                 default:
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onResults(Bundle bundle) {
-            ArrayList<String> arrayList_Result;
+            ArrayList<String> arrayList_Result; // ArrayList : 길이를 자동적으로 조절
             arrayList_Result=bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
 
             String[] strResult=new String[arrayList_Result.size()];
